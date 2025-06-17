@@ -9,7 +9,7 @@
 
         <div class="button-group">
             @for (button of tipsButton; track $index) {
-                    <app-button [color]="button.color" [textColor]="'#ffffff'" [label]="button.label"  (tipSelected)="handleSelectedTip(button.value)"/>
+                <app-button class="button" [color]="button.color" [textColor]="'#ffffff'" [label]="button.label"  (tipSelected)="handleSelectedTip(button.value)"/>
             }
             <input type="number" placeholder="Custom" class="custom" [(ngModel)]="inputTip" (ngModelChange)="inputTip.set($event)"
                 (keydown.enter)="handleSelectedTip(inputTip())"
@@ -19,6 +19,11 @@
 
     <div class="input-field">
         <label for="people">Number of People</label>
-        <input type="number" name="people" id="people" [(ngModel)]="numberOfPeople" (change)="onSetPeople(numberOfPeople())">
+        @if(numberOfPeople() <= 0) {
+            <span class="error">Can't be zero</span>
+        }
+        <input type="number" name="people" id="people" [(ngModel)]="numberOfPeople" (change)="onSetPeople(numberOfPeople())"
+         [class.error]="numberOfPeople() <= 0">
+        
     </div>
 </main>
