@@ -3,7 +3,7 @@
 
         <div class="row">
             <div class="left-section">
-                <h2>Tip Amount</h2>
+                <h4>Tip Amount</h4>
                 <p>/person</p>
             </div>
             <div class="right-section">
@@ -14,7 +14,7 @@
 
         <div class="row">
             <div class="left-section">
-                <h2>Total</h2>
+                <h4>Total</h4>
                 <p>/person</p>
             </div>
             <div class="right-section">
@@ -24,8 +24,6 @@
         </div>
     </div>
 
-    <div class="bottom-col">
-        <app-button [label]="'RESET'" color="'9FE8DF'"/>
-    </div>
+    <app-button [label]="'RESET'" [color]="'#9FE8DF'" [textColor]="'#00474B'" (click)="onResetClicked()"/>
 
 </section>

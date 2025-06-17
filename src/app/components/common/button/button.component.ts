@@ -10,6 +10,7 @@ import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 export class ButtonComponent {
   @Input() label: string = '';
   @Input() color: string = '';
+  @Input() textColor: string = '';
   @Input() value: number = 0;
   
   tipSelected = output<number>();

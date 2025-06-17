@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ButtonComponent } from "../common/button/button.component";
 import { CurrencyPipe } from '@angular/common';
 
@@ -12,5 +12,10 @@ import { CurrencyPipe } from '@angular/common';
 export class DisplayCardComponent {
   amountByPerson = input<number>();
   totalAmount = input<number>();
+  buttonClicked = output<void>();
+
+  onResetClicked() {
+    this.buttonClicked.emit()
+  }
 
 }

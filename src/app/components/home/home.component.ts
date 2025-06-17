@@ -27,6 +27,11 @@ export class HomeComponent {
     this.persons.set(people)
   }
 
+  resetFields() {
+    this.billAmount.set(0)
+    this.selectedTipAmount.set(0)
+    this.persons.set(0)
+  }
   amountPerPerson = computed(() => this.billAmount()/this.persons())
   amountPerPersonIncludingTip = computed(() => this.amountPerPerson() *  (this.selectedTipAmount()/100))
   totalAmount = computed(() => this.amountPerPerson() + this.amountPerPersonIncludingTip())
