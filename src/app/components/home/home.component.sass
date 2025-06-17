@@ -1,5 +1,6 @@
-@import '../../../styles/_variables'
-@import '../../../styles/_mixin'
+@use '../../../styles/_breakpoints' as *
+@use '../../../styles/_variables' as *
+@use '../../../styles/_mixin' as *
 
 main
     @include flex-containter(flex, null, null, column)
@@ -8,4 +9,13 @@ main
     border-radius: 1.25rem
     gap: 2rem
     // height: 100dvh
+
+@include mq(desktop)
+    main
+        @include flex-containter(flex, flex-start, center, row)
+        height: 100%
+
+        .card
+            width: 413px
+            height: 100%
     

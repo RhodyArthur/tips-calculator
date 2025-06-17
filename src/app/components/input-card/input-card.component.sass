@@ -1,5 +1,6 @@
-@import '../../../styles/_mixin'
-@import '../../../styles/_variables'
+@use '../../../styles/_breakpoints' as *
+@use '../../../styles/_variables' as *
+@use '../../../styles/_mixin' as *
 
 main
     @include flex-containter(flex, null, null, column)
@@ -49,10 +50,10 @@ main
             grid-template-columns: repeat(2, 1fr)
             gap: 1rem
 
-            button
-                &:hover
-                    background-color: $secondary-clr
-
+            // .button
+            //     &:hover
+            //         background-color: $secondary-clr
+                    
             .custom
                 outline: none
                 border: 2px solid transparent
@@ -74,3 +75,9 @@ main
     color: red
     text-align: right
 
+@include mq(desktop)
+    main
+        section
+            .button-group
+                display: grid
+                grid-template-columns: repeat(3, 1fr)

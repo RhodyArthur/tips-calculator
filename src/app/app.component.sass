@@ -14,7 +14,8 @@ main
         letter-spacing: 4px
         color: $text-green
 
-// @include mq(desktop)
-//     main
-//         @include flex-containter(flex, center, center, column)
-//         gap: 87px
+@include mq(desktop)
+    main
+        @include flex-containter(flex, flex-start, center, column)
+        gap: 87px
+        

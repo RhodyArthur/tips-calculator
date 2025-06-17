@@ -11,6 +11,7 @@
             @for (button of tipsButton; track $index) {
                 <app-button class="button" [color]="button.color" [textColor]="'#ffffff'" [label]="button.label"  (tipSelected)="handleSelectedTip(button.value)"/>
             }
+            
             <input type="number" placeholder="Custom" class="custom" [(ngModel)]="inputTip" (ngModelChange)="inputTip.set($event)"
                 (keydown.enter)="handleSelectedTip(inputTip())"
                 (blur)="handleSelectedTip(null)">

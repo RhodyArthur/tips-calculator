@@ -1,3 +1,7 @@
+@use '../../../../styles/_breakpoints' as *
+@use '../../../../styles/_variables' as *
+@use '../../../../styles/_mixin' as *
+    
 button
     outline: none
     border: none
@@ -7,3 +11,25 @@ button
     border-radius: 6px 
     font-weight: 600
     cursor: pointer
+
+.button-primary
+    background-color: $primary
+    color: white
+
+    &:hover
+        background-color: #9FE8DF
+        color: white
+
+.button-secondary
+    background-color: $secondary-clr
+    color: $primary
+
+    &:hover
+        background-color: #9FE8DF
+        color: white
+
+
+.button-active
+    &:hover
+        background-color: $secondary-clr
+        color: white

@@ -1,4 +1,4 @@
 <main>
-    <app-input-card (tipAmount)="getTip($event)" (setBill)="getBillAmount($event)" (setNumOfPeople)="getNumOfPeople($event)"/>
-    <app-display-card [amountByPerson]="amountPerPersonIncludingTip()" [totalAmount]="totalAmount()" (buttonClicked)="resetFields()"/>
+    <app-input-card class="card" (tipAmount)="getTip($event)" (setBill)="getBillAmount($event)" (setNumOfPeople)="getNumOfPeople($event)"/>
+    <app-display-card class="card" [amountByPerson]="amountPerPersonIncludingTip()" [totalAmount]="totalAmount()" (buttonClicked)="resetFields()"/>
 </main>

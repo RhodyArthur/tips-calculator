@@ -1,12 +1,14 @@
-@import '../../../styles/_variables'
-@import '../../../styles/_mixin'
+@use '../../../styles/_breakpoints' as *
+@use '../../../styles/_variables' as *
+@use '../../../styles/_mixin' as *
 
 section
-    @include flex-containter(flex, null, null, column)
+    @include flex-containter(flex, space-between, null, column)
     gap: 2rem
     padding: 1.5rem
     border-radius: 15px
     background-color: $primary
+    height: 100%
 
     .top-col
         @include flex-containter(flex, null, null, column)
@@ -30,3 +32,6 @@ section
                     font-size: 2rem
                     font-weight: 600
                     color: $secondary-clr
+@include mq(desktop)
+    section
+        padding: 2.5rem
