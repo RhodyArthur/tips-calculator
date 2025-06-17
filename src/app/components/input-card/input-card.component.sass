@@ -1,16 +1,57 @@
+@import '../../../styles/_mixin'
+@import '../../../styles/_variables'
 
-.button-group
-    width: 100%
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    gap: 1rem
+main
+    @include flex-containter(flex, null, null, column)
+    gap: 2rem
 
-    input
-        padding-inline-start: 0.5rem
-        outline: none
-        border: 1px solid green
-        border-radius: 6px
-        min-width: 80px
-        padding-inline: 0.5rem
-        padding-block: 0.75rem
+    label, p
+        color: $cyan-darker
+        font-size: 1rem
+        font-weight: 600
+
+    .input-field
+        @include flex-containter(flex, null, null, column)
+        gap: 6px
+
+
+        input
+            border: none
+            outline: none
+            padding: 0.5rem 0.75rem
+            border-radius: 6px
+            background-color: $cyan-lighter
+            text-align: right
+            color: $primary
+            font-size: 1.5rem
+            font-weight: 600
+            background-repeat: no-repeat
+            background-position: 10px center
+            
+        #bill
+            background-image: url('/assets/dollar.png')
+        #people
+            background-image: url('/assets/person.png')
+    
+    section
+        @include flex-containter(flex, null, null, column)
+        gap: 1rem
+        
+        .button-group
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 1rem
+
+            .custom
+                outline: none
+                border: none
+                background-color: $cyan-lighter
+                padding: 0.75rem 0.5rem
+                width: 100%
+                border-radius: 6px
+                color: $cyan-darkest
+                text-align: center
+                font-weight: 600
+
+
 

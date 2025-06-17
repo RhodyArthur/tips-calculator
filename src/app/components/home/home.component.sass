@@ -1,5 +1,11 @@
+@import '../../../styles/_variables'
+@import '../../../styles/_mixin'
+
 main
-    display: grid
-    grid-template-columns: 1fr 1fr
+    @include flex-containter(flex, null, null, column)
+    padding: 1.5rem
+    background-color: white
+    border-radius: 1.25rem
     gap: 2rem
+    // height: 100dvh
     

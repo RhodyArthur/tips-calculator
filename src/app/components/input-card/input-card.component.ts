@@ -6,45 +6,45 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-input-card',
   standalone: true,
-  imports: [ FormsModule],
+  imports: [ ButtonComponent, FormsModule],
   templateUrl: './input-card.component.html',
   styleUrl: './input-card.component.sass'
 })
 export class InputCardComponent {
 
-//   tipsButton: Button[] = [
-//     {
-//     label: '5%',
-//     color: '#00474B',
-//     value: 5,
-//     tipMethod: function(value){ return value}
-//   },
-//   {
-//     label: '10%',
-//     color: '#00474B',
-//     value: 10,
-//     tipMethod: function(value){ return value}
-//   },
-//   {
-//     label: '15%',
-//     color: '#00474B',
-//     value: 15,
-//     tipMethod: function(value){ return value}
-//   }
-//   ,
-//   {
-//     label: '25%',
-//     color: '#00474B',
-//     value: 25,
-//     tipMethod: function(value){ return value}
-//   },
-//   {
-//     label: '50%',
-//     color: '#00474B',
-//     value: 50,
-//     tipMethod: function(value){ return value}
-//   }
-// ] 
+  tipsButton: Button[] = [
+    {
+    label: '5%',
+    color: '#00474B',
+    value: 5,
+    tipMethod: function(value){ return value}
+  },
+  {
+    label: '10%',
+    color: '#00474B',
+    value: 10,
+    tipMethod: function(value){ return value}
+  },
+  {
+    label: '15%',
+    color: '#00474B',
+    value: 15,
+    tipMethod: function(value){ return value}
+  }
+  ,
+  {
+    label: '25%',
+    color: '#00474B',
+    value: 25,
+    tipMethod: function(value){ return value}
+  },
+  {
+    label: '50%',
+    color: '#00474B',
+    value: 50,
+    tipMethod: function(value){ return value}
+  }
+] 
 
  inputValue = signal<number>(0)
  numberOfPeople = signal<number>(1)

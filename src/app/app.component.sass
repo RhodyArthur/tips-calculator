@@ -1,3 +1,4 @@
+@use '../styles/_breakpoints' as *
 @import '../styles/_variables'
 @import '../styles/_mixin'
 
@@ -12,3 +13,8 @@ main
         padding-block: 3.125rem
         letter-spacing: 4px
         color: $text-green
+
+// @include mq(desktop)
+//     main
+//         @include flex-containter(flex, center, center, column)
+//         gap: 87px
