@@ -1,7 +1,7 @@
 <main>
     <div class="input-field">
         <label for="bill">Bill</label>
-        <input type="number" name="bill" id="bill" [(ngModel)]="inputValue">
+        <input type="number" name="bill" id="bill" [(ngModel)]="bill">
     </div>
 
     <section>
@@ -9,9 +9,11 @@
 
         <div class="button-group">
             @for (button of tipsButton; track $index) {
-                    <app-button [color]="button.color" [label]="button.label"/>
+                    <app-button [color]="button.color" [label]="button.label"  (tipSelected)="handleSelectedTip(button.value)"/>
             }
-            <input type="number" placeholder="Custom" class="custom">
+            <input type="number" placeholder="Custom" class="custom" [(ngModel)]="inputTip" (ngModelChange)="inputTip.set($event)"
+                (keydown.enter)="handleSelectedTip(inputTip())"
+                (blur)="handleSelectedTip(null)">
         </div>
     </section>
 

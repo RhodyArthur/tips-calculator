@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, Output, signal } from '@angular/core';
+import { Component, computed, output, signal } from '@angular/core';
 import { ButtonComponent } from "../common/button/button.component";
 import { Button } from '../../models/button';
 import { FormsModule } from '@angular/forms';
@@ -16,48 +16,57 @@ export class InputCardComponent {
     {
     label: '5%',
     color: '#00474B',
-    value: 5,
-    tipMethod: function(value){ return value}
+    value: 5
   },
   {
     label: '10%',
     color: '#00474B',
-    value: 10,
-    tipMethod: function(value){ return value}
+    value: 10
   },
   {
     label: '15%',
     color: '#00474B',
-    value: 15,
-    tipMethod: function(value){ return value}
+    value: 15
   }
   ,
   {
     label: '25%',
     color: '#00474B',
-    value: 25,
-    tipMethod: function(value){ return value}
+    value: 25
   },
   {
     label: '50%',
     color: '#00474B',
-    value: 50,
-    tipMethod: function(value){ return value}
+    value: 50
   }
 ] 
 
- inputValue = signal<number>(0)
- numberOfPeople = signal<number>(1)
- @Output() tipAmount = new EventEmitter<number>()
+ bill = signal<number>(0);
+ numberOfPeople = signal<number>(1);
+ inputTip = signal<number>(0);
+ customInputActive = signal<boolean>(false);
+ tipAmount = output<number>();
+
+ 
 
  constructor() {
  }
 
- amountPerPerson = computed(() => this.inputValue()/this.numberOfPeople())
+//  amountPerPerson = computed(() => this.inputValue()/this.numberOfPeople())
  
- handleTipAmount() {
-  this.tipAmount.emit(this.amountPerPerson())
- }
+//  handleTipAmount() {
+//   this.tipAmount.emit(this.amountPerPerson())
+//  }
 
+handleSelectedTip(tip: number | null = null) {
+  const customTip = this.inputTip();
+
+  if (tip !== null) {
+    this.tipAmount.emit(tip);
+    this.inputTip.set(0);
+  } else if (typeof customTip === 'number' && customTip > 0) {
+    this.tipAmount.emit(customTip);
+  }
+}
 
 }

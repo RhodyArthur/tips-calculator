@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { InputCardComponent } from "../input-card/input-card.component";
 import { DisplayCardComponent } from "../display-card/display-card.component";
 
@@ -11,4 +11,9 @@ import { DisplayCardComponent } from "../display-card/display-card.component";
 })
 export class HomeComponent {
 
+  selectedTipAmount = signal<number>(0);
+
+  getTip(tipAmount: number) {
+    this.selectedTipAmount.set(tipAmount)
+  }
 }

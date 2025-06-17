@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -10,11 +10,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
   @Input() label: string = '';
   @Input() color: string = '';
-  @Output() selectTip = new EventEmitter<number>();
+  @Input() value: number = 0;
+  
+  tipSelected = output<number>();
 
 
-  onTipSelected(event: Event) {
-    // const target = event.target as HTMLInputElement
-    // this.selectTip.emit(value)
+  onTipSelected(value: number) {
+    this.tipSelected.emit(value)
   }
 }
