@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { ButtonComponent } from "../common/button/button.component";
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-display-card',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, CurrencyPipe],
   templateUrl: './display-card.component.html',
   styleUrl: './display-card.component.sass'
 })
 export class DisplayCardComponent {
+  amountByPerson = input<number>();
+  totalAmount = input<number>();
 
 }

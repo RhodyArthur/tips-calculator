@@ -57,16 +57,16 @@ export class InputCardComponent {
  } 
 
 
-handleSelectedTip(tip: number | null = null) {
-  const customTip = this.inputTip();
+  handleSelectedTip(tip: number | null = null) {
+    const customTip = this.inputTip();
 
-  if (tip !== null) {
-    this.tipAmount.emit(tip);
-    this.inputTip.set(0);
-  } else if (typeof customTip === 'number' && customTip > 0) {
-    this.tipAmount.emit(customTip);
+    if (tip !== null) {
+      this.tipAmount.emit(tip);
+      this.inputTip.set(0);
+    } else if (typeof customTip === 'number' && customTip > 0) {
+      this.tipAmount.emit(customTip);
+    }
   }
-}
 
   onSetBill(amount: number) {
     this.setBill.emit(amount)

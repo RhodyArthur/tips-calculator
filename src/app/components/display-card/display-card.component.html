@@ -7,18 +7,18 @@
                 <p>/person</p>
             </div>
             <div class="right-section">
-                <p>$0.00</p>
+                <p>{{amountByPerson() | currency}}</p>
             </div>
             
         </div>
 
         <div class="row">
             <div class="left-section">
-                <h2>Tip Amount</h2>
+                <h2>Total</h2>
                 <p>/person</p>
             </div>
             <div class="right-section">
-                <p>$0.00</p>
+                <p>{{totalAmount() | currency}}</p>
             </div>
             
         </div>

@@ -28,4 +28,6 @@ export class HomeComponent {
   }
 
   amountPerPerson = computed(() => this.billAmount()/this.persons())
+  amountPerPersonIncludingTip = computed(() => this.amountPerPerson() *  (this.selectedTipAmount()/100))
+  totalAmount = computed(() => this.amountPerPerson() + this.amountPerPersonIncludingTip())
 }
