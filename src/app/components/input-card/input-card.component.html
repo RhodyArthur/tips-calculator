@@ -1,7 +1,7 @@
 <main>
     <div class="input-field">
         <label for="bill">Bill</label>
-        <input type="number" name="bill" id="bill" [(ngModel)]="bill">
+        <input type="number" name="bill" id="bill" [(ngModel)]="bill" (change)="onSetBill(bill())">
     </div>
 
     <section>

@@ -45,18 +45,17 @@ export class InputCardComponent {
  numberOfPeople = signal<number>(1);
  inputTip = signal<number>(0);
  customInputActive = signal<boolean>(false);
+
  tipAmount = output<number>();
+ setBill = output<number>();
+ setNumOfPeople = output<number>();
+
 
  
 
  constructor() {
- }
+ } 
 
-//  amountPerPerson = computed(() => this.inputValue()/this.numberOfPeople())
- 
-//  handleTipAmount() {
-//   this.tipAmount.emit(this.amountPerPerson())
-//  }
 
 handleSelectedTip(tip: number | null = null) {
   const customTip = this.inputTip();
@@ -68,5 +67,13 @@ handleSelectedTip(tip: number | null = null) {
     this.tipAmount.emit(customTip);
   }
 }
+
+  onSetBill(amount: number) {
+    this.setBill.emit(amount)
+  }
+
+  onSetPeople(people: number) {
+    this.setNumOfPeople.emit(people)
+  }
 
 }
